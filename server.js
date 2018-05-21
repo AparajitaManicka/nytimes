@@ -5,7 +5,7 @@ var mongoose = require("mongoose");
 var axios = require("axios");
 var cheerio = require("cheerio");
 var db = require("./models");
-var PORT = 7000;
+var PORT = process.env.PORT||7000;
 var app = express();
 app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
