@@ -10,6 +10,7 @@ $(document).on("click", "#showarticles", function () {
   $.getJSON("/articles", function (data) {
     console.log("Show articles Data length:" + data.length);
     $("#articles").empty();
+    $("#notes").empty();
     for (var i = 0; i < data.length; i++) {
       // The title of the article
       if (data[i].saved === false) {
@@ -23,7 +24,7 @@ $(document).on("click", "#showarticles", function () {
 $(document).on("click", "#savedarticles", function () {
   $.getJSON("/articles", function (data) {
     $("#articles").empty();
-
+    $("#notes").empty();
     console.log("Saved articles Data length:" + data.length);
     for (var i = 0; i < data.length; i++) {
       // The title of the article
